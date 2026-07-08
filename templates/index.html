@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ELMO AI Assistant</title>
+
+    <!-- CSS Connection -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="logo">
+                🤖
+            </div>
+
+            <div>
+                <h1>ELMO AI</h1>
+                <p>Your Smart AI Assistant</p>
+            </div>
+        </div>
+
+
+        <!-- Chat Area -->
+        <div class="chat-box" id="chat-box">
+
+            <div class="message bot-message">
+                Hello 👋 I am ELMO AI.
+                <br>
+                How can I help you today?
+            </div>
+
+        </div>
+
+
+        <!-- Input Area -->
+        <div class="input-area">
+
+            <input 
+                type="text"
+                id="user-input"
+                placeholder="Ask something..."
+            >
+
+            <button onclick="sendMessage()">
+                ➤
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- JavaScript Connection -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
+
