@@ -54,7 +54,7 @@ create_users_table()
 
 
 # =====================================
-# Helper Functions
+# Helper Functions & Decorators
 # =====================================
 
 def allowed_file(filename):
@@ -66,6 +66,15 @@ def allowed_file(filename):
 
 def is_logged_in():
     return "user_id" in session or "guest" in session
+
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if "username" not in session:
+            return redirect("/login")
+        return f(*args, **kwargs)
+    return decorated_function
 
 
 # =====================================
@@ -308,6 +317,8 @@ def upload_file():
 
 @app.errorhandler(404)
 def page_not_found(error):
+    # Ensure templates/404.html exists, or return a simple string fallback:
+    # return "Page not found", 404
     return render_template("404.html"), 404
 
 
@@ -329,16 +340,8 @@ def internal_error(error):
 # =====================================
 
 if __name__ == "__main__":
-
     app.run(
-        debug=True,
         host="0.0.0.0",
-        port=5000
+        port=int(os.environ.get("PORT", 5000)),
+        debug=False
     )
-def login_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if "username" not in session:
-            return redirect("/login")
-        return f(*args, **kwargs)
-    return decorated_function
