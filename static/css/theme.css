@@ -1,0 +1,53 @@
+:root{
+
+--bg:#070716;
+
+--primary:#667eea;
+
+--secondary:#764ba2;
+
+--glass:rgba(255,255,255,0.08);
+
+--border:rgba(255,255,255,0.15);
+
+--white:#ffffff;
+
+--text:#e8e8ff;
+
+}
+
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+
+}
+
+
+
+body{
+
+min-height:100vh;
+
+background:
+
+radial-gradient(
+circle at top left,
+#667eea,
+transparent 35%
+),
+
+radial-gradient(
+circle at bottom right,
+#764ba2,
+transparent 35%
+),
+
+#070716;
+
+color:white;
+
+}

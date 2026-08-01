@@ -1,4 +1,25 @@
+# Environment
 .env
+
+# Python
 __pycache__/
+*.pyc
+
+# VS Code
 .vscode/
+
+# Test files
 test.py
+
+# Database files
+*.db
+
+# Uploads
+uploads/
+
+# ChromaDB
+chroma_db/
+
+# OS files
+.DS_Store
+Thumbs.db

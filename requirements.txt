@@ -2,3 +2,11 @@ Flask
 google-genai
 python-dotenv
 gunicorn
+chromadb
+langchain
+langchain-chroma
+langchain-community
+sentence-transformers
+pypdf
+Pillow
+Werkzeug
